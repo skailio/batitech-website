@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
-import { cn } from "@/lib/utils";
+
 
 // Register GSAP Plugins safely
 if (typeof window !== "undefined") {
@@ -30,10 +30,12 @@ export function SterlingGateNav() {
             gsap.defaults({ ease: "power2.out", duration: 0.7 });
         }
 
+        const currentContainer = containerRef.current;
+
         const ctx = gsap.context(() => {
             // 2. Shape Hover
-            const menuItems = containerRef.current!.querySelectorAll(".menu-list-item[data-shape]");
-            const shapesContainer = containerRef.current!.querySelector(".ambient-background-shapes");
+            const menuItems = currentContainer!.querySelectorAll(".menu-list-item[data-shape]");
+            const shapesContainer = currentContainer!.querySelector(".ambient-background-shapes");
 
             menuItems.forEach((item) => {
                 const shapeIndex = item.getAttribute("data-shape");
@@ -66,7 +68,7 @@ export function SterlingGateNav() {
                 item.addEventListener("mouseenter", onEnter);
                 item.addEventListener("mouseleave", onLeave);
 
-                (item as any)._cleanup = () => {
+                (item as Element & { _cleanup?: () => void })._cleanup = () => {
                     item.removeEventListener("mouseenter", onEnter);
                     item.removeEventListener("mouseleave", onLeave);
                 };
@@ -76,9 +78,9 @@ export function SterlingGateNav() {
 
         return () => {
             ctx.revert();
-            if (containerRef.current) {
-                const items = containerRef.current.querySelectorAll(".menu-list-item[data-shape]");
-                items.forEach((item: any) => item._cleanup && item._cleanup());
+            if (currentContainer) {
+                const items = currentContainer.querySelectorAll(".menu-list-item[data-shape]");
+                items.forEach((item) => (item as Element & { _cleanup?: () => void })._cleanup?.());
             }
         };
     }, []);
@@ -96,8 +98,8 @@ export function SterlingGateNav() {
             const fadeTargets = containerRef.current!.querySelectorAll("[data-menu-fade]");
 
             const menuButton = containerRef.current!.querySelector(".nav-close-btn");
-            const menuButtonTexts = menuButton?.querySelectorAll("p");
-            const menuButtonIcon = menuButton?.querySelector(".menu-button-icon");
+            const menuButtonTexts = menuButton?.querySelectorAll("p") || [];
+            const menuButtonIcon = menuButton?.querySelector(".menu-button-icon") || [];
 
             const tl = gsap.timeline();
 

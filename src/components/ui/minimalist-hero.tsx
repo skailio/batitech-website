@@ -1,6 +1,9 @@
+"use client";
+
 import React from 'react';
+import Link from "next/link";
 import { motion } from 'framer-motion';
-import { LucideIcon, ArrowRight, Phone, CheckCircle2 } from 'lucide-react';
+import { Phone, CheckCircle2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
 
@@ -58,9 +61,11 @@ export const MinimalistHero = ({
                         <Button className="h-12 px-8 text-base font-bold uppercase tracking-wide bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
                             <Phone className="mr-2 h-4 w-4" /> Devis Gratuit
                         </Button>
-                        <Button variant="outline" className="h-12 px-8 text-base font-bold uppercase tracking-wide border-secondary text-secondary hover:bg-secondary hover:text-white">
-                            Nos Services
-                        </Button>
+                        <Link href={readMoreLink} passHref>
+                            <Button variant="outline" className="h-12 px-8 text-base font-bold uppercase tracking-wide border-secondary text-secondary hover:bg-secondary hover:text-white">
+                                Nos Services
+                            </Button>
+                        </Link>
                     </div>
                 </motion.div>
 
@@ -131,7 +136,7 @@ export const MinimalistHero = ({
                     {/* Stats */}
                     <div>
                         <p className="text-3xl font-bold text-secondary">15+</p>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider">Années d'exp.</p>
+                        <p className="text-xs text-gray-500 uppercase tracking-wider">Années d&apos;exp.</p>
                     </div>
                     <div className="w-px h-8 bg-gray-200"></div>
                     <div>

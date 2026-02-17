@@ -19,7 +19,7 @@ type InfiniteSliderProps = {
     // The provided implementation has `duration = 25`. It does NOT have `speed`.
     // However, `LogoCloud` usage has `speed={60}`.
     // I will add `speed` prop to InfiniteSlider implementation to make it compatible with LogoCloud usage.
-    speed?: number;
+
     speedOnHover?: number;
 };
 
@@ -98,7 +98,7 @@ export function InfiniteSlider({
         ? {
             onHoverStart: () => {
                 setIsTransitioning(true);
-                setCurrentDuration(effectiveDurationOnHover);
+                setCurrentDuration(effectiveDurationOnHover!);
             },
             onHoverEnd: () => {
                 setIsTransitioning(true);
