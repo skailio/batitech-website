@@ -2,6 +2,7 @@ import { SterlingGateNav } from '@/components/ui/sterling-gate-nav';
 import { MinimalistHero } from '@/components/ui/minimalist-hero';
 import { LogoCloud } from '@/components/ui/logo-cloud';
 import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/components/ui/image-comparison';
+import { AboutSection } from '@/components/ui/about-section';
 
 export default function Home() {
   const logos = [
@@ -31,6 +32,8 @@ export default function Home() {
         </div>
         <LogoCloud logos={logos} />
       </section>
+
+      <AboutSection />
 
       <section className="py-24 bg-white relative overflow-hidden" id="realisations">
         {/* Background decoration */}
