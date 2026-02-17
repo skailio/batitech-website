@@ -1,5 +1,5 @@
 "use client";
-import { InfiniteSlider } from "@/components/ui/infinite-slider";
+
 import { ProgressiveBlur } from "@/components/ui/progressive-blur";
 
 type Logo = {
@@ -19,13 +19,12 @@ export function LogoCloud({ logos, ...props }: LogoCloudProps) {
             {/* Cleaned up styling for minimalist fit */}
             <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-dashed border-gray-200/50" />
 
-            <InfiniteSlider gap={42} reverse speed={60} speedOnHover={20}>
-                {logos.map((logo) => (
+            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12 px-6">
+                {logos.slice(0, 4).map((logo) => ( // Show only unique logos, no need to loop
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                         alt={logo.alt}
-                        className="pointer-events-none h-12 select-none md:h-16 w-auto object-contain"
-                        // Increased size slightly (h-4 -> h-8) for visibility
+                        className="h-12 md:h-16 w-auto object-contain transition-all hover:scale-110"
                         height="auto"
                         key={`logo-${logo.alt}`}
                         loading="lazy"
@@ -33,7 +32,7 @@ export function LogoCloud({ logos, ...props }: LogoCloudProps) {
                         width="auto"
                     />
                 ))}
-            </InfiniteSlider>
+            </div>
 
             <ProgressiveBlur
                 blurIntensity={1}

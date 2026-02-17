@@ -48,12 +48,12 @@ export const MinimalistHero = ({
                     transition={{ duration: 0.6, delay: 0.5 }}
                     className="z-20 order-2 md:order-1 text-center md:text-left space-y-6"
                 >
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-secondary/5 text-secondary text-xs font-bold uppercase tracking-wider w-fit mx-auto md:mx-0">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-100 text-black text-xs font-bold uppercase tracking-wider w-fit mx-auto md:mx-0">
                         <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
                         Disponible pour vos projets
                     </div>
 
-                    <p className="mx-auto max-w-xs text-secondary/80 leading-relaxed md:mx-0 text-base md:text-lg font-medium">
+                    <p className="mx-auto max-w-xs text-black leading-relaxed md:mx-0 text-base md:text-lg font-bold">
                         {mainText}
                     </p>
 
@@ -114,7 +114,7 @@ export const MinimalistHero = ({
                     transition={{ duration: 0.6, delay: 0.7 }}
                     className="z-20 order-3 flex items-center justify-center text-center md:justify-start pl-0 md:pl-8"
                 >
-                    <h1 className="text-6xl font-extrabold text-secondary md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter">
+                    <h1 className="text-6xl font-extrabold text-black md:text-7xl lg:text-8xl leading-[0.9] tracking-tighter">
                         {overlayText.part1}
                         <br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-br from-primary to-primary-dark">
