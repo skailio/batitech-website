@@ -5,12 +5,11 @@ import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/
 
 export default function Home() {
   const logos = [
-    { src: "https://placehold.co/200x80/transparent/333?text=QUALIBAT", alt: "Qualibat" },
-    { src: "https://placehold.co/200x80/transparent/333?text=RGE", alt: "RGE" },
-    { src: "https://placehold.co/200x80/transparent/333?text=MAAF+PRO", alt: "MAAF" },
-    { src: "https://placehold.co/200x80/transparent/333?text=POINT.P", alt: "Point P" },
-    { src: "https://placehold.co/200x80/transparent/333?text=CAPEB", alt: "CAPEB" },
-    { src: "https://placehold.co/200x80/transparent/333?text=F.F.B", alt: "FFB" },
+    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
+    { src: "/images/certs/cert2.png", alt: "Certification 2" },
+    { src: "/images/certs/cert3.png", alt: "Certification 3" },
+    { src: "/images/certs/cert5.png", alt: "Certification 5" },
+    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
   ];
 
   return (

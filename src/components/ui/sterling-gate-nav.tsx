@@ -164,8 +164,9 @@ export function SterlingGateNav() {
                     {/* Transparent header */}
                     <div className="container is--full flex justify-between items-center w-full max-w-7xl mx-auto">
                         {/* Logo */}
-                        <a href="#" aria-label="home" className="nav-logo-row w-inline-block pointer-events-auto font-heading text-2xl font-bold text-secondary">
-                            BATITECH
+                        <a href="#" aria-label="home" className="nav-logo-row w-inline-block pointer-events-auto">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src="/images/logo-batitech.png" alt="Batitech" className="h-12 md:h-14 w-auto object-contain" />
                         </a>
 
                         <div className="nav-row__right flex items-center gap-4">

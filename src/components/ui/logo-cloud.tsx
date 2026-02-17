@@ -13,9 +13,9 @@ type LogoCloudProps = React.ComponentProps<"div"> & {
     logos: Logo[];
 };
 
-export function LogoCloud({ logos }: LogoCloudProps) {
+export function LogoCloud({ logos, ...props }: LogoCloudProps) {
     return (
-        <div className="relative mx-auto max-w-3xl bg-transparent py-6 md:border-x border-dashed border-gray-200/50">
+        <div className="relative mx-auto max-w-3xl bg-transparent py-6 md:border-x border-dashed border-gray-200/50" {...props}>
             {/* Cleaned up styling for minimalist fit */}
             <div className="-translate-x-1/2 -top-px pointer-events-none absolute left-1/2 w-screen border-t border-dashed border-gray-200/50" />
 
