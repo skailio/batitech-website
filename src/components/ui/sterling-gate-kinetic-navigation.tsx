@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
+
 import gsap from "gsap";
 import { CustomEase } from "gsap/CustomEase";
 
@@ -190,6 +191,7 @@ export function SterlingGateNav() {
                 <header className="header container mx-auto px-6 py-4 flex justify-between items-center">
                     {/* Logo / Home Link - Image Logo */}
                     <a href="#" aria-label="home" className="nav-logo-row w-inline-block">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src="/images/logo-batitech.png" alt="Batitech" className="h-10 w-auto" />
                     </a>
 
