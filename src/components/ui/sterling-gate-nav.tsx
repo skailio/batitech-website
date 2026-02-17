@@ -172,7 +172,7 @@ export function SterlingGateNav() {
                         <div className="nav-row__right flex items-center gap-4">
                             {/* Clean Menu Indicator (Arrow Removed) */}
                             <div className="nav-toggle-label hidden sm:block pointer-events-auto" onClick={toggleMenu} style={{ cursor: 'pointer' }}>
-                                <span className="toggle-text text-sm font-medium uppercase tracking-widest text-secondary">Menu</span>
+                                <span className="toggle-text text-sm font-medium uppercase tracking-widest text-gray-900">Menu</span>
                             </div>
 
                             {/* Restored Menu Button */}
@@ -224,22 +224,22 @@ export function SterlingGateNav() {
                         <div className="menu-content-wrapper relative z-30 h-full flex items-center justify-center p-12">
                             <ul className="menu-list space-y-6">
                                 <li className="menu-list-item overflow-hidden" data-shape="1">
-                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-secondary hover:text-primary transition-colors block">
+                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-gray-900 hover:text-primary transition-colors block">
                                         <p className="nav-link-text">Accueil</p>
                                     </a>
                                 </li>
                                 <li className="menu-list-item overflow-hidden" data-shape="2">
-                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-secondary hover:text-primary transition-colors block">
+                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-gray-900 hover:text-primary transition-colors block">
                                         <p className="nav-link-text">Réalisations</p>
                                     </a>
                                 </li>
                                 <li className="menu-list-item overflow-hidden" data-shape="3">
-                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-secondary hover:text-primary transition-colors block">
+                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-gray-900 hover:text-primary transition-colors block">
                                         <p className="nav-link-text">Services</p>
                                     </a>
                                 </li>
                                 <li className="menu-list-item overflow-hidden" data-shape="5">
-                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-secondary hover:text-primary transition-colors block">
+                                    <a href="#" className="nav-link w-inline-block text-4xl md:text-5xl font-heading font-bold text-gray-900 hover:text-primary transition-colors block">
                                         <p className="nav-link-text">Contact</p>
                                     </a>
                                 </li>
@@ -247,7 +247,7 @@ export function SterlingGateNav() {
                         </div>
 
                         {/* Close Button Inside Menu */}
-                        <button className="absolute top-6 right-6 p-4 text-secondary hover:text-primary transition-colors" onClick={closeMenu}>
+                        <button className="absolute top-6 right-6 p-4 text-gray-900 hover:text-primary transition-colors" onClick={closeMenu}>
                             Fermer
                         </button>
 

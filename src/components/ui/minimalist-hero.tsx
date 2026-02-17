@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from "next/link";
 import { motion } from 'framer-motion';
-import { Phone, CheckCircle2 } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { Button } from "@/components/ui/button";
 
@@ -25,8 +25,6 @@ interface MinimalistHeroProps {
 export const MinimalistHero = ({
     mainText,
     readMoreLink,
-    imageSrc,
-    imageAlt,
     overlayText,
     locationText,
     className,
@@ -62,49 +60,16 @@ export const MinimalistHero = ({
                             <Phone className="mr-2 h-4 w-4" /> Devis Gratuit
                         </Button>
                         <Link href={readMoreLink} passHref>
-                            <Button variant="outline" className="h-12 px-8 text-base font-bold uppercase tracking-wide border-secondary text-secondary hover:bg-secondary hover:text-white">
+                            <Button variant="outline" className="h-12 px-8 text-base font-bold uppercase tracking-wide border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white">
                                 Nos Services
                             </Button>
                         </Link>
                     </div>
                 </motion.div>
 
-                {/* Center Image with Circle */}
-                <div className="relative order-1 md:order-2 flex justify-center items-center h-full min-h-[400px]">
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                        className="absolute z-0 h-[280px] w-[280px] rounded-full bg-primary/20 md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
-                    ></motion.div>
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-                        className="absolute z-0 h-[220px] w-[220px] rounded-full border border-primary/40 md:h-[350px] md:w-[350px] lg:h-[450px] lg:w-[450px]"
-                    ></motion.div>
-
-                    <motion.img
-                        src={imageSrc}
-                        alt={imageAlt}
-                        className="relative z-10 h-[300px] w-[200px] object-cover md:w-[280px] md:h-[400px] lg:w-[320px] lg:h-[500px] shadow-2xl rounded-sm"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
-                    />
-                    {/* Floating Badge */}
-                    <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 0.8 }}
-                        className="absolute top-10 right-0 md:-right-10 z-20 bg-white p-4 rounded-lg shadow-xl border border-gray-100 max-w-[150px]"
-                    >
-                        <div className="flex items-center gap-2 mb-1">
-                            <CheckCircle2 className="text-primary w-5 h-5" />
-                            <span className="font-bold text-secondary text-sm">Qualibat RGE</span>
-                        </div>
-                        <p className="text-xs text-gray-500">Certification officielle garantie.</p>
-                    </motion.div>
+                {/* Center Content Removed (Layout Adjusted) */}
+                <div className="relative order-1 md:order-2 flex justify-center items-center h-full min-h-[100px] md:min-h-[400px]">
+                    {/* Placeholder for spacing or potential future content */}
                 </div>
 
                 {/* Right Text */}
@@ -135,13 +100,13 @@ export const MinimalistHero = ({
                 >
                     {/* Stats */}
                     <div>
-                        <p className="text-3xl font-bold text-secondary">15+</p>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider">Années d&apos;exp.</p>
+                        <p className="text-3xl font-bold text-gray-900">15+</p>
+                        <p className="text-xs text-gray-900 uppercase tracking-wider">Années d&apos;exp.</p>
                     </div>
                     <div className="w-px h-8 bg-gray-200"></div>
                     <div>
-                        <p className="text-3xl font-bold text-secondary">250+</p>
-                        <p className="text-xs text-gray-500 uppercase tracking-wider">Chantiers livrés</p>
+                        <p className="text-3xl font-bold text-gray-900">250+</p>
+                        <p className="text-xs text-gray-900 uppercase tracking-wider">Chantiers livrés</p>
                     </div>
                 </motion.div>
                 <motion.div

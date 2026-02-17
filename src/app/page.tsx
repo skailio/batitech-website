@@ -42,10 +42,10 @@ export default function Home() {
               <div className="inline-block px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest">
                 Etude de Cas
               </div>
-              <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-secondary leading-tight">
+              <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-gray-900 leading-tight">
                 Rénovation <br /> <span className="text-primary">Mairie</span>
               </h2>
-              <p className="text-lg text-gray-700 leading-relaxed border-l-4 border-primary/50 pl-6">
+              <p className="text-lg text-gray-800 leading-relaxed border-l-4 border-primary/50 pl-6">
                 Découvrez la transformation spectaculaire de cette façade.
                 Grâce à notre expertise en <strong>maçonnerie traditionnelle</strong> et ravalement,
                 nous avons redonné son éclat d&apos;origine au bâtiment tout en améliorant son isolation.
@@ -53,16 +53,16 @@ export default function Home() {
 
               <ul className="space-y-4 pt-4">
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
-                  <span className="font-medium text-secondary">Ravalement de façade complet</span>
+                  <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-white">✓</span>
+                  <span className="font-medium text-gray-900">Ravalement de façade complet</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
-                  <span className="font-medium text-secondary">Traitement des fissures</span>
+                  <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-white">✓</span>
+                  <span className="font-medium text-gray-900">Traitement des fissures</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
-                  <span className="font-medium text-secondary">Finitions à la chaux</span>
+                  <span className="w-6 h-6 rounded-full bg-black flex items-center justify-center text-white">✓</span>
+                  <span className="font-medium text-gray-900">Finitions à la chaux</span>
                 </li>
               </ul>
             </div>
@@ -72,7 +72,7 @@ export default function Home() {
               <ImageComparison className="aspect-[4/3] w-full h-full rounded-xl shadow-2xl border-4 border-white ring-1 ring-gray-100" enableHover>
                 <ImageComparisonImage
                   src="/images/avant-mairie.jpg"
-                  className="grayscale hover:grayscale-0 transition-all duration-700"
+                  className="transition-all duration-700"
                   alt="Avant rénovation"
                   position="left"
                 />
