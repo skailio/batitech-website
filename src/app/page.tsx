@@ -6,9 +6,9 @@ import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/
 export default function Home() {
   const logos = [
     { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
-    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" }, // Duplicate for effect until other certs are verified
-    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
-    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
+    { src: "/images/certs/cert2.png", alt: "Certification 2" },
+    { src: "/images/certs/cert3.png", alt: "Certification 3" },
+    { src: "/images/certs/cert5.png", alt: "Certification 5" },
   ];
 
   return (
@@ -18,15 +18,15 @@ export default function Home() {
       <MinimalistHero
         mainText="Entreprise de maçonnerie générale et rénovation basée à Château-Thierry. Nous transformons vos projets en réalité durable avec une finition impeccable."
         readMoreLink="#contact"
-        imageSrc="/images/après-mairie.jpg" // Using the 'After' image as the hero showcase
-        imageAlt="Rénovation Mairie par Batitech"
+        imageSrc="/images/logo-batitech.png" // Swapped Mairie photo for Brand Logo
+        imageAlt="Batitech Construction"
         overlayText={{ part1: "Bâtir", part2: "L'Avenir." }}
         locationText="Zone d'intervention : 90km autour de Brasles"
       />
 
       <section className="py-20 bg-gray-50/50 border-t border-dashed border-gray-200">
         <div className="container mx-auto px-6 mb-12 text-center">
-          <h2 className="text-sm font-bold text-gray-600 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
+          <h2 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
           <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
         <LogoCloud logos={logos} />
