@@ -6,9 +6,8 @@ import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/
 export default function Home() {
   const logos = [
     { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
-    { src: "/images/certs/cert2.png", alt: "Certification 2" },
-    { src: "/images/certs/cert3.png", alt: "Certification 3" },
-    { src: "/images/certs/cert5.png", alt: "Certification 5" },
+    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" }, // Duplicate for effect until other certs are verified
+    { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
     { src: "/images/certs/qualibat.png", alt: "Qualibat RGE" },
   ];
 
@@ -27,7 +26,7 @@ export default function Home() {
 
       <section className="py-20 bg-gray-50/50 border-t border-dashed border-gray-200">
         <div className="container mx-auto px-6 mb-12 text-center">
-          <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
+          <h2 className="text-sm font-bold text-gray-600 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
           <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
         <LogoCloud logos={logos} />
@@ -46,7 +45,7 @@ export default function Home() {
               <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-secondary leading-tight">
                 Rénovation <br /> <span className="text-primary">Mairie</span>
               </h2>
-              <p className="text-lg text-gray-600 leading-relaxed border-l-4 border-primary/50 pl-6">
+              <p className="text-lg text-gray-700 leading-relaxed border-l-4 border-primary/50 pl-6">
                 Découvrez la transformation spectaculaire de cette façade.
                 Grâce à notre expertise en <strong>maçonnerie traditionnelle</strong> et ravalement,
                 nous avons redonné son éclat d&apos;origine au bâtiment tout en améliorant son isolation.
@@ -91,7 +90,7 @@ export default function Home() {
                   </div>
                 </ImageComparisonSlider>
               </ImageComparison>
-              <p className="text-center mt-4 text-sm text-gray-400 italic">Glissez pour voir la transformation</p>
+              <p className="text-center mt-4 text-sm text-gray-500 italic">Glissez pour voir la transformation</p>
             </div>
           </div>
         </div>

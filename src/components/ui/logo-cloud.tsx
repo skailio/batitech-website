@@ -24,7 +24,7 @@ export function LogoCloud({ logos, ...props }: LogoCloudProps) {
                     /* eslint-disable-next-line @next/next/no-img-element */
                     <img
                         alt={logo.alt}
-                        className="pointer-events-none h-8 select-none md:h-10 opacity-70 grayscale transition-all hover:grayscale-0 hover:opacity-100"
+                        className="pointer-events-none h-12 select-none md:h-16 w-auto object-contain"
                         // Increased size slightly (h-4 -> h-8) for visibility
                         height="auto"
                         key={`logo-${logo.alt}`}
