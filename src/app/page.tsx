@@ -1,47 +1,99 @@
-import HeroSection from "@/components/HeroSection";
+import { SterlingGateNav } from '@/components/ui/sterling-gate-nav';
+import { MinimalistHero } from '@/components/ui/minimalist-hero';
+import { LogoCloud } from '@/components/ui/logo-cloud';
+import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/components/ui/image-comparison';
 
 export default function Home() {
-  return (
-    <main>
-      <HeroSection />
+  const logos = [
+    { src: "https://placehold.co/200x80/transparent/333?text=QUALIBAT", alt: "Qualibat" },
+    { src: "https://placehold.co/200x80/transparent/333?text=RGE", alt: "RGE" },
+    { src: "https://placehold.co/200x80/transparent/333?text=MAAF+PRO", alt: "MAAF" },
+    { src: "https://placehold.co/200x80/transparent/333?text=POINT.P", alt: "Point P" },
+    { src: "https://placehold.co/200x80/transparent/333?text=CAPEB", alt: "CAPEB" },
+    { src: "https://placehold.co/200x80/transparent/333?text=F.F.B", alt: "FFB" },
+  ];
 
-      {/* ── Devis section placeholder ── */}
-      <section
-        id="devis"
-        className="min-h-screen flex items-center justify-center bg-secondary px-6"
-      >
-        <div className="text-center max-w-2xl">
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-white mb-4">
-            Demandez votre devis gratuit
-          </h2>
-          <p className="text-gray-400 mb-8">
-            Remplissez le formulaire ci‑dessous ou appelez‑nous directement.
-            Nous vous répondons sous 48&nbsp;h.
-          </p>
-          <div className="glass rounded-2xl p-8 text-left space-y-4">
-            <input
-              type="text"
-              placeholder="Votre nom"
-              className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition"
-            />
-            <input
-              type="tel"
-              placeholder="Votre téléphone"
-              className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition"
-            />
-            <input
-              type="email"
-              placeholder="Votre email"
-              className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition"
-            />
-            <textarea
-              rows={4}
-              placeholder="Décrivez votre projet..."
-              className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition resize-none"
-            />
-            <button className="w-full py-4 rounded-xl bg-gradient-to-r from-primary to-accent text-white font-semibold text-lg shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02]">
-              Envoyer ma demande
-            </button>
+  return (
+    <main className="bg-white min-h-screen relative selection:bg-primary selection:text-white">
+      <SterlingGateNav />
+
+      <MinimalistHero
+        mainText="Entreprise de maçonnerie générale et rénovation basée à Château-Thierry. Nous transformons vos projets en réalité durable avec une finition impeccable."
+        readMoreLink="#contact"
+        imageSrc="/images/après-mairie.jpg" // Using the 'After' image as the hero showcase
+        imageAlt="Rénovation Mairie par Batitech"
+        overlayText={{ part1: "Bâtir", part2: "L'Avenir." }}
+        locationText="Zone d'intervention : 90km autour de Brasles"
+      />
+
+      <section className="py-20 bg-gray-50/50 border-t border-dashed border-gray-200">
+        <div className="container mx-auto px-6 mb-12 text-center">
+          <h2 className="text-sm font-bold text-gray-400 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
+          <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <LogoCloud logos={logos} />
+      </section>
+
+      <section className="py-24 bg-white relative overflow-hidden" id="realisations">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -skew-x-12 translate-x-32 z-0"></div>
+
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-5/12 space-y-8">
+              <div className="inline-block px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest">
+                Etude de Cas
+              </div>
+              <h2 className="text-4xl md:text-5xl font-heading font-extrabold text-secondary leading-tight">
+                Rénovation <br /> <span className="text-primary">Mairie</span>
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed border-l-4 border-primary/50 pl-6">
+                Découvrez la transformation spectaculaire de cette façade.
+                Grâce à notre expertise en <strong>maçonnerie traditionnelle</strong> et ravalement,
+                nous avons redonné son éclat d&apos;origine au bâtiment tout en améliorant son isolation.
+              </p>
+
+              <ul className="space-y-4 pt-4">
+                <li className="flex items-center gap-3">
+                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
+                  <span className="font-medium text-secondary">Ravalement de façade complet</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
+                  <span className="font-medium text-secondary">Traitement des fissures</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center text-green-600">✓</span>
+                  <span className="font-medium text-secondary">Finitions à la chaux</span>
+                </li>
+              </ul>
+            </div>
+
+            <div className="lg:w-7/12 w-full h-[400px] lg:h-[600px] relative group">
+              <div className="absolute inset-0 bg-primary/20 blur-2xl -z-10 rounded-full scale-90 group-hover:scale-100 transition-transform duration-700"></div>
+              <ImageComparison className="aspect-[4/3] w-full h-full rounded-xl shadow-2xl border-4 border-white ring-1 ring-gray-100" enableHover>
+                <ImageComparisonImage
+                  src="/images/avant-mairie.jpg"
+                  className="grayscale hover:grayscale-0 transition-all duration-700"
+                  alt="Avant rénovation"
+                  position="left"
+                />
+                <ImageComparisonImage
+                  src="/images/après-mairie.jpg"
+                  alt="Après rénovation"
+                  position="right"
+                />
+                <ImageComparisonSlider className="w-1.5 bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)]">
+                  <div className="absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-xl flex items-center justify-center border-4 border-gray-100 hover:scale-110 transition-transform">
+                    <div className="flex gap-1">
+                      <div className="w-1 h-4 bg-gray-400 rounded-full"></div>
+                      <div className="w-1 h-4 bg-primary rounded-full"></div>
+                    </div>
+                  </div>
+                </ImageComparisonSlider>
+              </ImageComparison>
+              <p className="text-center mt-4 text-sm text-gray-400 italic">Glissez pour voir la transformation</p>
+            </div>
           </div>
         </div>
       </section>
