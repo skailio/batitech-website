@@ -194,9 +194,7 @@ export function SterlingGateNav() {
 
                     <div className="nav-row__right flex items-center gap-4">
                         {/* Clean Menu Indicator (Arrow Removed) */}
-                        <div className="nav-toggle-label hidden md:flex items-center gap-2 cursor-pointer" onClick={toggleMenu}>
-                            <span className="toggle-text text-sm font-medium uppercase tracking-widest">Menu</span>
-                        </div>
+
 
                         {/* Restored Menu Button */}
                         <button role="button" className="nav-close-btn relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" onClick={toggleMenu} style={{ pointerEvents: 'auto' }}>
