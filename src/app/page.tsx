@@ -18,7 +18,6 @@ export default function Home() {
 
       <MinimalistHero
         mainText="Entreprise de maçonnerie générale et rénovation basée à Château-Thierry. Nous transformons vos projets en réalité durable avec une finition impeccable."
-        readMoreLink="#contact"
         imageSrc="/images/logo-batitech.png" // Swapped Mairie photo for Brand Logo
         imageAlt="Batitech Construction"
         overlayText={{ part1: "Bâtir", part2: "L'Avenir." }}

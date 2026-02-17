@@ -10,7 +10,6 @@ import { Button } from "@/components/ui/button";
 // Define the props interface for type safety and reusability
 interface MinimalistHeroProps {
     mainText: string;
-    readMoreLink: string;
     imageSrc: string;
     imageAlt: string;
     overlayText: {
@@ -24,7 +23,6 @@ interface MinimalistHeroProps {
 // The main reusable Hero Section component
 export const MinimalistHero = ({
     mainText,
-    readMoreLink,
     overlayText,
     locationText,
     className,
