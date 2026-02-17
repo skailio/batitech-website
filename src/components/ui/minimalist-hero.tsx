@@ -56,10 +56,12 @@ export const MinimalistHero = ({
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start pt-4">
-                        <Button className="h-12 px-8 text-base font-bold uppercase tracking-wide bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
-                            <Phone className="mr-2 h-4 w-4" /> Devis Gratuit
-                        </Button>
-                        <Link href={readMoreLink} passHref>
+                        <a href="tel:0323694292">
+                            <Button className="h-12 px-8 text-base font-bold uppercase tracking-wide bg-primary hover:bg-primary/90 text-white shadow-lg shadow-primary/20">
+                                <Phone className="mr-2 h-4 w-4" /> Devis Gratuit
+                            </Button>
+                        </a>
+                        <Link href="#services" passHref>
                             <Button variant="outline" className="h-12 px-8 text-base font-bold uppercase tracking-wide border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white">
                                 Nos Services
                             </Button>

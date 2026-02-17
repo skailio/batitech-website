@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import { CheckCircle2, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, ShieldCheck, Leaf, Users, Truck } from "lucide-react";
 
 export function AboutSection() {
     return (
-        <section className="py-20 bg-white" id="about">
+        <section className="py-20 bg-white" id="services">
             <div className="container mx-auto px-6 max-w-7xl">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
@@ -44,34 +44,49 @@ export function AboutSection() {
 
                     {/* Right: Commitments & Info */}
                     <div className="space-y-10">
-                        {/* Commitments List */}
-                        <div className="bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
-                            <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center gap-2">
-                                <CheckCircle2 className="text-primary w-6 h-6" />
+                        {/* Commitments Grid */}
+                        <div>
+                            <h3 className="text-2xl font-bold text-gray-900 mb-8 flex items-center gap-2">
+                                <ShieldCheck className="text-primary w-8 h-8" />
                                 Nos Engagements
                             </h3>
-                            <ul className="space-y-4">
-                                <li className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                                    <p className="text-gray-700 text-sm"><strong className="text-gray-900">Réglementation :</strong> respect des normes en vigueur.</p>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                                    <p className="text-gray-700 text-sm"><strong className="text-gray-900">Fournitures :</strong> produits ciblés et performants (meilleur rapport qualité/prix).</p>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                                    <p className="text-gray-700 text-sm"><strong className="text-gray-900">Recrutement :</strong> qualification de nos employés, sous-traitants et fournisseurs.</p>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                                    <p className="text-gray-700 text-sm"><strong className="text-gray-900">Environnement :</strong> traçabilité des déchets, produits biodégradables ECO’LABEL.</p>
-                                </li>
-                                <li className="flex gap-3">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
-                                    <p className="text-gray-700 text-sm"><strong className="text-gray-900">SAV :</strong> strict respect des exigences légales et des attentes clients.</p>
-                                </li>
-                            </ul>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {/* Card 1 */}
+                                <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-primary">
+                                        <ShieldCheck className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="font-bold text-gray-900 mb-2">Réglementation</h4>
+                                    <p className="text-sm text-gray-600">Respect strict des normes en vigueur.</p>
+                                </div>
+
+                                {/* Card 2 */}
+                                <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-primary">
+                                        <Truck className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="font-bold text-gray-900 mb-2">Fournitures</h4>
+                                    <p className="text-sm text-gray-600">Produits ciblés et performants (meilleur rapport qualité/prix).</p>
+                                </div>
+
+                                {/* Card 3 */}
+                                <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-primary">
+                                        <Users className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="font-bold text-gray-900 mb-2">Recrutement</h4>
+                                    <p className="text-sm text-gray-600">Qualification certifiée de nos employés et partenaires.</p>
+                                </div>
+
+                                {/* Card 4 */}
+                                <div className="bg-gray-50 p-6 rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
+                                    <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-primary">
+                                        <Leaf className="w-5 h-5" />
+                                    </div>
+                                    <h4 className="font-bold text-gray-900 mb-2">Environnement</h4>
+                                    <p className="text-sm text-gray-600">Traçabilité déchets & produits ECO’LABEL.</p>
+                                </div>
+                            </div>
                         </div>
 
                         {/* Contact Card */}
@@ -84,7 +99,7 @@ export function AboutSection() {
                                     </div>
                                     <div>
                                         <p className="text-gray-400 text-xs uppercase tracking-wider">Téléphone</p>
-                                        <p className="font-bold text-lg">03 23 69 42 92</p>
+                                        <a href="tel:0323694292" className="font-bold text-lg hover:text-primary transition-colors">03 23 69 42 92</a>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
@@ -93,7 +108,7 @@ export function AboutSection() {
                                     </div>
                                     <div>
                                         <p className="text-gray-400 text-xs uppercase tracking-wider">Email</p>
-                                        <p className="font-bold text-lg">contact@batitech-construction.com</p>
+                                        <a href="mailto:contact@batitech-construction.com" className="font-bold text-lg hover:text-primary transition-colors">contact@batitech-construction.com</a>
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">

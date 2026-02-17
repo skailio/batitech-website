@@ -87,8 +87,8 @@ export default function Home() {
                 <ImageComparisonSlider className="w-1.5 bg-white shadow-[0_0_20px_rgba(0,0,0,0.2)]">
                   <div className="absolute top-1/2 left-1/2 w-12 h-12 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white shadow-xl flex items-center justify-center border-4 border-gray-100 hover:scale-110 transition-transform">
                     <div className="flex gap-1">
-                      <div className="w-1 h-4 bg-gray-400 rounded-full"></div>
-                      <div className="w-1 h-4 bg-primary rounded-full"></div>
+                      <div className="w-1 h-3 bg-gray-300 rounded-full"></div>
+                      <div className="w-1 h-3 bg-gray-300 rounded-full"></div>
                     </div>
                   </div>
                 </ImageComparisonSlider>

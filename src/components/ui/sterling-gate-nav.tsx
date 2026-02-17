@@ -37,16 +37,21 @@ export function SterlingGateNav() {
             const tl = gsap.timeline();
 
             if (isMenuOpen) {
-                if (navWrap) navWrap.setAttribute("data-nav", "open");
-                tl.set(navWrap, { display: "block" })
-                    .set(menu, { xPercent: 0 }, "<")
+                // Remove hidden class manually to ensure GSAP can animate opacity/display
+                if (navWrap) {
+                    navWrap.classList.remove("hidden");
+                    navWrap.setAttribute("data-nav", "open");
+                }
+
+                tl.set(navWrap, { display: "block", autoAlpha: 1 })
+                    .set(menu, { xPercent: 0, opacity: 1 }, "<") // Ensure opacity 1
                     .fromTo(overlay, { autoAlpha: 0 }, { autoAlpha: 1 }, "<")
                     .fromTo(links, { x: 50, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.1, duration: 0.5 }, "-=0.2");
             } else {
                 if (navWrap) navWrap.setAttribute("data-nav", "closed");
                 tl.to(overlay, { autoAlpha: 0 })
                     .to(menu, { xPercent: 100 }, "<")
-                    .set(navWrap, { display: "none" });
+                    .set(navWrap, { display: "none", autoAlpha: 0 }); // Hide after animation
             }
         }, containerRef);
         return () => ctx.revert();
@@ -55,9 +60,9 @@ export function SterlingGateNav() {
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
     return (
-        <div ref={containerRef} className="fixed top-0 left-0 w-full z-50 pointer-events-none">
+        <div ref={containerRef} className="fixed top-0 left-0 w-full z-[9999] pointer-events-none">
             {/* Header */}
-            <header className="w-full px-6 py-4 flex justify-between items-center bg-transparent pointer-events-auto">
+            <header className="w-full px-6 py-4 flex justify-between items-center bg-transparent pointer-events-auto relative z-[10000]">
                 <a href="#" className="pointer-events-auto">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src="/images/logo-batitech.png" alt="Batitech" className="h-12 md:h-14 w-auto object-contain" />
@@ -83,12 +88,15 @@ export function SterlingGateNav() {
             </header>
 
             {/* Fullscreen Overlay Menu */}
-            <div className="nav-overlay-wrapper hidden fixed inset-0 z-50 pointer-events-auto">
+            {/* Added bg-primary directly to debug transparency, though it should be on nav. Added high z-index */}
+            <div className="nav-overlay-wrapper hidden fixed inset-0 z-[9998] pointer-events-auto">
                 {/* Dark Overlay */}
                 <div className="overlay absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={toggleMenu}></div>
 
                 {/* Menu Panel (Green Background) */}
-                <nav className="menu-content absolute top-0 right-0 w-full md:max-w-md h-full bg-primary shadow-2xl flex flex-col transform translate-x-full">
+                <nav className="menu-content absolute top-0 right-0 w-full md:max-w-md h-full bg-green-600 shadow-2xl flex flex-col transform translate-x-full">
+                    {/* Forced bg-green-600 to ensure visibility if bg-primary variable is weak */}
+
                     {/* Close Button */}
                     <div className="flex justify-end p-6">
                         <button
