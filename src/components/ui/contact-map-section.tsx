@@ -32,7 +32,7 @@ export function ContactMapSection() {
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg">Adresse</h4>
                                     <p className="text-gray-600">
-                                        Château-Thierry, Picardie<br />
+                                        9 La Croix Vitard, 02400 Brasles<br />
                                         France
                                     </p>
                                     <a href="https://www.google.com/maps/search/?api=1&query=Château-Thierry" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm mt-1 inline-block hover:underline">

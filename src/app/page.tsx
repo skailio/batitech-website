@@ -1,4 +1,6 @@
-import { SterlingGateNav } from '@/components/ui/sterling-gate-nav';
+"use client";
+
+import { SterlingGateNav } from '@/components/ui/sterling-gate-kinetic-navigation';
 import { MinimalistHero } from '@/components/ui/minimalist-hero';
 import { LogoCloud } from '@/components/ui/logo-cloud';
 import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/components/ui/image-comparison';
@@ -19,7 +21,8 @@ export default function Home() {
 
       <MinimalistHero
         mainText="Entreprise de maçonnerie générale et rénovation basée à Château-Thierry. Nous transformons vos projets en réalité durable avec une finition impeccable."
-        imageSrc="/images/logo-batitech.png" // Swapped Mairie photo for Brand Logo
+        readMoreLink="#services"
+        imageSrc="/images/logo-batitech.png"
         imageAlt="Batitech Construction"
         overlayText={{ part1: "Bâtir", part2: "L'Avenir." }}
         locationText="Zone d'intervention : 90km autour de Brasles"
