@@ -3,6 +3,7 @@ import { MinimalistHero } from '@/components/ui/minimalist-hero';
 import { LogoCloud } from '@/components/ui/logo-cloud';
 import { ImageComparison, ImageComparisonImage, ImageComparisonSlider } from '@/components/ui/image-comparison';
 import { AboutSection } from '@/components/ui/about-section';
+import { ContactMapSection } from '@/components/ui/contact-map-section';
 
 export default function Home() {
   const logos = [
@@ -97,6 +98,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <ContactMapSection />
     </main>
   );
 }
