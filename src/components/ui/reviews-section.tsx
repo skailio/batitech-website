@@ -1,8 +1,7 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import React, { useRef } from "react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 // Real Review Data from User
@@ -51,7 +50,7 @@ const GoogleLogo = () => (
 
 const ReviewCard = ({ review }: { review: typeof REVIEWS[0] }) => {
     return (
-        <div className="flex-shrink-0 w-[300px] md:w-[350px] bg-white rounded-xl p-6 shadow-sm border border-gray-100 mx-4 flex flex-col justify-between h-[220px]">
+        <div className="flex-shrink-0 w-[300px] md:w-[400px] snap-center bg-white rounded-xl p-6 shadow-sm border border-gray-100 flex flex-col justify-between h-[240px]">
             <div>
                 <div className="flex items-start justify-between mb-4">
                     <div className="flex items-center gap-3">
@@ -79,60 +78,76 @@ const ReviewCard = ({ review }: { review: typeof REVIEWS[0] }) => {
 };
 
 export function ReviewsSection() {
+    const scrollRef = useRef<HTMLDivElement>(null);
 
-
-
-    // Double the array for seamless loop
-    const SCROLL_REVIEWS = [...REVIEWS, ...REVIEWS];
+    const scroll = (direction: "left" | "right") => {
+        if (scrollRef.current) {
+            const scrollAmount = 350; // Approx card width + gap
+            scrollRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
+    };
 
     return (
         <section className="py-24 bg-gray-50 overflow-hidden">
-            <div className="container mx-auto px-6 mb-12 flex flex-col md:flex-row items-center justify-between gap-6">
-                <div>
-                    <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-                        Ils nous font <span className="text-gray-900">confiance</span>
-                    </h2>
-                    <p className="text-gray-500 max-w-lg">
-                        Découvrez les retours de nos clients sur la qualité de nos réalisations et notre professionnalisme.
-                    </p>
-                </div>
+            <div className="container mx-auto px-6 mb-12">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
+                    <div>
+                        <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
+                            Ils nous font <span className="text-gray-900">confiance</span>
+                        </h2>
+                        <p className="text-gray-500 max-w-lg">
+                            Découvrez les retours de nos clients sur la qualité de nos réalisations et notre professionnalisme.
+                        </p>
+                    </div>
 
-                {/* Google Badge Summary */}
-                <div className="flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
-                    <div className="flex items-center gap-1">
-                        <span className="font-bold text-xl text-gray-900">4.9</span>
-                        <div className="flex">
-                            {[1, 2, 3, 4, 5].map((i) => (
-                                <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                            ))}
+                    {/* Google Badge Summary */}
+                    <div className="flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
+                        <div className="flex items-center gap-1">
+                            <span className="font-bold text-xl text-gray-900">4.6</span>
+                            <div className="flex">
+                                {[1, 2, 3, 4, 5].map((i) => (
+                                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="h-8 w-px bg-gray-200"></div>
+                        <div className="flex items-center gap-2">
+                            <GoogleLogo />
+                            <span className="text-sm font-medium text-gray-600">Google Reviews</span>
                         </div>
                     </div>
-                    <div className="h-8 w-px bg-gray-200"></div>
-                    <div className="flex items-center gap-2">
-                        <GoogleLogo />
-                        <span className="text-sm font-medium text-gray-600">Google Reviews</span>
-                    </div>
                 </div>
-            </div>
 
-            {/* Infinite Marquee */}
-            <div className="relative w-full">
-                <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none"></div>
+                {/* Navigation Buttons */}
+                <div className="flex justify-end gap-2 mb-4">
+                    <button
+                        onClick={() => scroll("left")}
+                        className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                        aria-label="Previous reviews"
+                    >
+                        <ChevronLeft className="w-6 h-6 text-gray-600" />
+                    </button>
+                    <button
+                        onClick={() => scroll("right")}
+                        className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                        aria-label="Next reviews"
+                    >
+                        <ChevronRight className="w-6 h-6 text-gray-600" />
+                    </button>
+                </div>
 
-                <motion.div
-                    className="flex items-center"
-                    animate={{ x: ["0%", "-50%"] }}
-                    transition={{
-                        repeat: Infinity,
-                        ease: "linear",
-                        duration: 40
-                    }}
+                {/* Scrollable Container */}
+                <div
+                    ref={scrollRef}
+                    className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 px-1"
                 >
-                    {SCROLL_REVIEWS.map((review, idx) => (
+                    {REVIEWS.map((review, idx) => (
                         <ReviewCard key={`${review.author}-${idx}`} review={review} />
                     ))}
-                </motion.div>
+                </div>
             </div>
         </section>
     );
