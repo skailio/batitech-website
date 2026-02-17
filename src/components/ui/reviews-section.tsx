@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { Star, ChevronLeft, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { ScrollReveal } from "./scroll-reveal";
 
 // Real Review Data from User
 const REVIEWS = [
@@ -94,60 +94,68 @@ export function ReviewsSection() {
         <section className="py-24 bg-gray-50 overflow-hidden">
             <div className="container mx-auto px-6 mb-12">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-8">
-                    <div>
-                        <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
-                            Ils nous font <span className="text-gray-900">confiance</span>
-                        </h2>
-                        <p className="text-gray-500 max-w-lg">
-                            Découvrez les retours de nos clients sur la qualité de nos réalisations et notre professionnalisme.
-                        </p>
-                    </div>
+                    <ScrollReveal>
+                        <div>
+                            <h2 className="text-3xl md:text-5xl font-bold text-primary mb-4">
+                                Ils nous font <span className="text-gray-900">confiance</span>
+                            </h2>
+                            <p className="text-gray-500 max-w-lg">
+                                Découvrez les retours de nos clients sur la qualité de nos réalisations et notre professionnalisme.
+                            </p>
+                        </div>
+                    </ScrollReveal>
 
                     {/* Google Badge Summary */}
-                    <div className="flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
-                        <div className="flex items-center gap-1">
-                            <span className="font-bold text-xl text-gray-900">4.6</span>
-                            <div className="flex">
-                                {[1, 2, 3, 4, 5].map((i) => (
-                                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
-                                ))}
+                    <ScrollReveal delay={0.2} direction="left">
+                        <div className="flex items-center gap-4 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-100">
+                            <div className="flex items-center gap-1">
+                                <span className="font-bold text-xl text-gray-900">4.6</span>
+                                <div className="flex">
+                                    {[1, 2, 3, 4, 5].map((i) => (
+                                        <Star key={i} className="w-4 h-4 text-yellow-400 fill-yellow-400" />
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="h-8 w-px bg-gray-200"></div>
+                            <div className="flex items-center gap-2">
+                                <GoogleLogo />
+                                <span className="text-sm font-medium text-gray-600">Google Reviews</span>
                             </div>
                         </div>
-                        <div className="h-8 w-px bg-gray-200"></div>
-                        <div className="flex items-center gap-2">
-                            <GoogleLogo />
-                            <span className="text-sm font-medium text-gray-600">Google Reviews</span>
-                        </div>
-                    </div>
+                    </ScrollReveal>
                 </div>
 
                 {/* Navigation Buttons */}
-                <div className="flex justify-end gap-2 mb-4">
-                    <button
-                        onClick={() => scroll("left")}
-                        className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-                        aria-label="Previous reviews"
-                    >
-                        <ChevronLeft className="w-6 h-6 text-gray-600" />
-                    </button>
-                    <button
-                        onClick={() => scroll("right")}
-                        className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-                        aria-label="Next reviews"
-                    >
-                        <ChevronRight className="w-6 h-6 text-gray-600" />
-                    </button>
-                </div>
+                <ScrollReveal delay={0.3}>
+                    <div className="flex justify-end gap-2 mb-4">
+                        <button
+                            onClick={() => scroll("left")}
+                            className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                            aria-label="Previous reviews"
+                        >
+                            <ChevronLeft className="w-6 h-6 text-gray-600" />
+                        </button>
+                        <button
+                            onClick={() => scroll("right")}
+                            className="p-2 rounded-full bg-white border border-gray-200 hover:bg-gray-100 transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                            aria-label="Next reviews"
+                        >
+                            <ChevronRight className="w-6 h-6 text-gray-600" />
+                        </button>
+                    </div>
+                </ScrollReveal>
 
                 {/* Scrollable Container */}
-                <div
-                    ref={scrollRef}
-                    className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 px-1"
-                >
-                    {REVIEWS.map((review, idx) => (
-                        <ReviewCard key={`${review.author}-${idx}`} review={review} />
-                    ))}
-                </div>
+                <ScrollReveal delay={0.4} direction="up">
+                    <div
+                        ref={scrollRef}
+                        className="flex gap-6 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-4 px-1"
+                    >
+                        {REVIEWS.map((review, idx) => (
+                            <ReviewCard key={`${review.author}-${idx}`} review={review} />
+                        ))}
+                    </div>
+                </ScrollReveal>
             </div>
         </section>
     );
