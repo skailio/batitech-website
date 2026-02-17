@@ -35,7 +35,7 @@ export function ContactMapSection() {
                                         9 La Croix Vitard, 02400 Brasles<br />
                                         France
                                     </p>
-                                    <a href="https://www.google.com/maps/search/?api=1&query=Château-Thierry" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm mt-1 inline-block hover:underline">
+                                    <a href="https://www.google.com/maps/dir//9+La+Croix+Vitard,+02400+Brasles" target="_blank" rel="noopener noreferrer" className="text-primary font-bold text-sm mt-1 inline-block hover:underline">
                                         Itinéraire &rarr;
                                     </a>
                                 </div>
@@ -74,8 +74,8 @@ export function ContactMapSection() {
                 {/* Right: Google Map */}
                 <div className="w-full lg:w-1/2 h-[400px] lg:h-auto bg-gray-200 relative">
                     <iframe
-                        title="Carte de localisation Batitech Construction à Château-Thierry"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41807.96200236402!2d3.376837128682057!3d49.04356777651817!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e85c21e51b6817%3A0x40af13e81643c10!2sCh%C3%A2teau-Thierry!5e0!3m2!1sfr!2sfr!4v1700000000000!5m2!1sfr!2sfr"
+                        title="Carte de localisation Batitech Construction"
+                        src="https://maps.google.com/maps?q=9+La+Croix+Vitard,+02400+Brasles&t=&z=15&ie=UTF8&iwloc=&output=embed"
                         width="100%"
                         height="100%"
                         style={{ border: 0, filter: "grayscale(100%) contrast(1.2) opacity(0.9)" }}

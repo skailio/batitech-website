@@ -32,7 +32,6 @@ export function SterlingGateNav() {
 
         const ctx = gsap.context(() => {
             // 1. Arrow Animation (Removed from indicator, but keeping logic if arrow existed/restored elsewhere)
-            // Since arrow is removed from JSX, this selector won't find anything, which is fine (safe check).
             const arrowLine = document.querySelector(".arrow-line");
             if (arrowLine) {
                 const pathLength = (arrowLine as SVGPathElement).getTotalLength();
@@ -46,23 +45,19 @@ export function SterlingGateNav() {
             }
 
             // 2. Shape Hover
-            // Updated Selectors: .menu-list-item -> .menu-list-item, .abstract-shapes -> .ambient-background-shapes
             const menuItems = containerRef.current!.querySelectorAll(".menu-list-item[data-shape]");
             const shapesContainer = containerRef.current!.querySelector(".ambient-background-shapes");
 
             menuItems.forEach((item) => {
                 const shapeIndex = item.getAttribute("data-shape");
-                // Updated Selector: .shape -> .bg-shape
                 const shape = shapesContainer ? shapesContainer.querySelector(`.bg-shape-${shapeIndex}`) : null;
 
                 if (!shape) return;
 
-                // Updated Selector: .shape-el -> .shape-element
                 const shapeEls = shape.querySelectorAll(".shape-element");
 
                 const onEnter = () => {
                     if (shapesContainer) {
-                        // Updated Selector: .shape -> .bg-shape
                         shapesContainer.querySelectorAll(".bg-shape").forEach((s) => s.classList.remove("active"));
                     }
                     shape.classList.add("active");
@@ -84,7 +79,6 @@ export function SterlingGateNav() {
                 item.addEventListener("mouseenter", onEnter);
                 item.addEventListener("mouseleave", onLeave);
 
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 (item as any)._cleanup = () => {
                     item.removeEventListener("mouseenter", onEnter);
                     item.removeEventListener("mouseleave", onLeave);
@@ -97,7 +91,6 @@ export function SterlingGateNav() {
             ctx.revert();
             if (containerRef.current) {
                 const items = containerRef.current.querySelectorAll(".menu-list-item[data-shape]");
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 items.forEach((item: any) => item._cleanup && item._cleanup());
             }
         };
@@ -108,30 +101,32 @@ export function SterlingGateNav() {
         if (!containerRef.current) return;
 
         const ctx = gsap.context(() => {
-            // Updated Selectors: .nav -> .nav-overlay-wrapper, .menu -> .menu-content
+            // Updated Selectors logic to handle parent container visibility
+            const menuContainer = containerRef.current!.querySelector(".fullscreen-menu-container");
             const navWrap = containerRef.current!.querySelector(".nav-overlay-wrapper");
             const menu = containerRef.current!.querySelector(".menu-content");
             const overlay = containerRef.current!.querySelector(".overlay");
-            // Updated Selector: .bg-panel -> .backdrop-layer
             const bgPanels = containerRef.current!.querySelectorAll(".backdrop-layer");
-            // Updated Selector: .menu-link -> .nav-link
             const menuLinks = containerRef.current!.querySelectorAll(".nav-link");
             const fadeTargets = containerRef.current!.querySelectorAll("[data-menu-fade]");
 
-            // Updated Selector: .menu-button -> .nav-close-btn
             const menuButton = containerRef.current!.querySelector(".nav-close-btn");
             const menuButtonTexts = menuButton?.querySelectorAll("p");
-            // Updated Selector: .menu-button-icon -> .menu-button-icon (unchanged in CSS/JSX?) No, wait, CSS had .menu-button-icon
             const menuButtonIcon = menuButton?.querySelector(".menu-button-icon");
 
             const tl = gsap.timeline();
 
             if (isMenuOpen) {
                 // OPEN
+                if (menuContainer) {
+                    tl.set(menuContainer, { display: "block" });
+                }
+
                 if (navWrap) {
                     navWrap.setAttribute("data-nav", "open");
-                    tl.set(navWrap, { display: "block" });
+                    tl.set(navWrap, { display: "block" }, "<");
                 }
+
                 if (menu) {
                     tl.set(menu, { xPercent: 0 }, "<");
                 }
@@ -148,7 +143,6 @@ export function SterlingGateNav() {
                 if (menuLinks.length > 0) tl.fromTo(menuLinks, { yPercent: 140, rotate: 10 }, { yPercent: 0, rotate: 0, stagger: 0.05 }, "<+=0.35");
 
                 if (fadeTargets.length) {
-                    // Keep clearProps: "all" for blog entry fix
                     tl.fromTo(fadeTargets, { autoAlpha: 0, yPercent: 50 }, { autoAlpha: 1, yPercent: 0, stagger: 0.04, clearProps: "all" }, "<+=0.2");
                 }
 
@@ -167,6 +161,7 @@ export function SterlingGateNav() {
                 }
 
                 if (navWrap) tl.set(navWrap, { display: "none" });
+                if (menuContainer) tl.set(menuContainer, { display: "none" });
             }
 
         }, containerRef);
@@ -192,9 +187,9 @@ export function SterlingGateNav() {
         <div ref={containerRef}>
             <div className="site-header-wrapper fixed top-0 w-full z-50">
                 <header className="header container mx-auto px-6 py-4 flex justify-between items-center">
-                    {/* Logo / Home Link - Making it empty/transparent or brand name if preferred, keeping as per snippet structure */}
-                    <a href="#" aria-label="home" className="nav-logo-row w-inline-block font-bold text-xl tracking-tighter">
-                        BATITECH
+                    {/* Logo / Home Link - Image Logo */}
+                    <a href="#" aria-label="home" className="nav-logo-row w-inline-block">
+                        <img src="/images/logo-batitech.png" alt="Batitech" className="h-10 w-auto" />
                     </a>
 
                     <div className="nav-row__right flex items-center gap-4">
