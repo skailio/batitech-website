@@ -180,6 +180,7 @@ export function SterlingGateNav() {
         return () => window.removeEventListener("keydown", handleEsc);
     }, [isMenuOpen]);
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const toggleMenu = () => setIsMenuOpen(prev => !prev);
     const closeMenu = () => setIsMenuOpen(false);
 
@@ -193,11 +194,8 @@ export function SterlingGateNav() {
                     </a>
 
                     <div className="nav-row__right flex items-center gap-4">
-                        {/* Clean Menu Indicator (Arrow Removed) */}
 
-
-                        {/* Restored Menu Button */}
-                        <button role="button" className="nav-close-btn relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" onClick={toggleMenu} style={{ pointerEvents: 'auto' }}>
+                        {/* <button role="button" className="nav-close-btn relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" onClick={toggleMenu} style={{ pointerEvents: 'auto' }}>
                             <div className="icon-wrap w-6 h-6">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -216,7 +214,7 @@ export function SterlingGateNav() {
                                     ></path>
                                 </svg>
                             </div>
-                        </button>
+                        </button> */}
                     </div>
                 </header>
             </div>
