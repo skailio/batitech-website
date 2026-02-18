@@ -23,7 +23,7 @@ export default function Home() {
       <MinimalistHero
         mainText="Entreprise de maçonnerie générale et rénovation basée à Château-Thierry. Nous transformons vos projets en réalité durable avec une finition impeccable."
         readMoreLink="#services"
-        imageSrc="/images/maison-3d-v26.png"
+        imageSrc="/images/maison-3d-v27.png"
         imageAlt="Batitech Construction"
         overlayText={{ part1: "Bâtir", part2: "L'Avenir." }}
         locationText="Zone d'intervention : 90km autour de Brasles"
