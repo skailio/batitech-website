@@ -29,10 +29,9 @@ export default function Home() {
         locationText="Zone d'intervention : 90km autour de Brasles"
       />
 
-      <section className="py-12 bg-gray-50/50 border-t border-dashed border-gray-200">
+      <section className="py-12 bg-gray-50/50">
         <div className="container mx-auto px-6 mb-8 text-center">
           <h2 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
-          <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
         <LogoCloud logos={logos} />
       </section>

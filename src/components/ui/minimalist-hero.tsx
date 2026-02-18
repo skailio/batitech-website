@@ -77,28 +77,24 @@ export const MinimalistHero = ({
 
                 {/* Right Column: 3D Image with Tilt Effect */}
                 <div className="relative order-1 md:order-2 flex justify-center items-center h-[400px] md:h-[600px]">
-                    <motion.div
-                        className="relative cursor-pointer"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                        whileHover={{
-                            scale: 1.05,
-                            rotateX: 5,
-                            rotateY: -5,
-                            transition: { duration: 0.4 }
-                        }}
-                        style={{ perspective: 1000 }}
-                    >
-                        {/* Glow Effect behind image */}
-                        <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full scale-75 -z-10" />
+                    <Tilt rotationFactor={20} isRevese>
+                        <motion.div
+                            className="relative cursor-pointer"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, ease: "easeOut" }}
+                            style={{ perspective: 1000 }}
+                        >
+                            {/* Glow Effect behind image */}
+                            <div className="absolute inset-0 bg-primary/20 blur-[80px] rounded-full scale-75 -z-10" />
 
-                        <motion.img
-                            src={imageSrc}
-                            alt={imageAlt}
-                            className="relative z-10 w-full max-w-[320px] md:max-w-[500px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)]"
-                        />
-                    </motion.div>
+                            <motion.img
+                                src={imageSrc}
+                                alt={imageAlt}
+                                className="relative z-10 w-full max-w-[320px] md:max-w-[500px] h-auto object-contain drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)] mix-blend-multiply"
+                            />
+                        </motion.div>
+                    </Tilt>
                 </div>
             </div>
 
