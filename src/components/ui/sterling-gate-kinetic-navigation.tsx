@@ -206,35 +206,28 @@ export function SterlingGateNav() {
                             </a>
                         </div>
 
-                        {/* Menu Trigger */}
-                        <button
-                            role="button"
+                        {/* Phone Contact Button (Replaces Menu) */}
+                        <a
+                            href="tel:0323694292"
                             className="nav-close-btn group flex items-center gap-3 focus:outline-none"
-                            onClick={toggleMenu}
-                            style={{ pointerEvents: 'auto' }}
                         >
-                            <span className="text-sm font-bold uppercase tracking-widest text-gray-900 group-hover:text-primary transition-colors">Menu</span>
                             <div className="relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-primary/90 transition-all duration-300">
                                 <div className="icon-wrap w-5 h-5">
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
-                                        width="100%"
-                                        viewBox="0 0 16 16"
+                                        viewBox="0 0 24 24"
                                         fill="none"
-                                        className="menu-button-icon transition-transform duration-500"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        className="w-full h-full"
                                     >
-                                        <path
-                                            d="M7.33333 16L7.33333 -3.2055e-07L8.66667 -3.78832e-07L8.66667 16L7.33333 16Z"
-                                            fill="currentColor"
-                                        ></path>
-                                        <path
-                                            d="M16 8.66667L-2.62269e-07 8.66667L-3.78832e-07 7.33333L16 7.33333L16 8.66667Z"
-                                            fill="currentColor"
-                                        ></path>
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                                     </svg>
                                 </div>
                             </div>
-                        </button>
+                        </a>
                     </div>
                 </header>
             </div>
