@@ -195,28 +195,46 @@ export function SterlingGateNav() {
                         <img src="/images/logo-batitech.png" alt="Batitech" className="h-10 w-auto" />
                     </a>
 
-                    <div className="nav-row__right flex items-center gap-4">
+                    <div className="nav-row__right flex items-center gap-8">
+                        {/* Desktop Direct Links */}
+                        <div className="hidden md:flex items-center gap-8">
+                            <a href="#realisations" className="text-sm font-bold uppercase tracking-widest text-gray-900 hover:text-primary transition-colors">
+                                Nos Réalisations
+                            </a>
+                            <a href="#contact" className="text-sm font-bold uppercase tracking-widest text-gray-900 hover:text-primary transition-colors">
+                                Nous Contacter
+                            </a>
+                        </div>
 
-                        {/* <button role="button" className="nav-close-btn relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:scale-105 transition-transform" onClick={toggleMenu} style={{ pointerEvents: 'auto' }}>
-                            <div className="icon-wrap w-6 h-6">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    width="100%"
-                                    viewBox="0 0 16 16"
-                                    fill="none"
-                                    className="menu-button-icon transition-transform duration-500"
-                                >
-                                    <path
-                                        d="M7.33333 16L7.33333 -3.2055e-07L8.66667 -3.78832e-07L8.66667 16L7.33333 16Z"
-                                        fill="currentColor"
-                                    ></path>
-                                    <path
-                                        d="M16 8.66667L-2.62269e-07 8.66667L-3.78832e-07 7.33333L16 7.33333L16 8.66667Z"
-                                        fill="currentColor"
-                                    ></path>
-                                </svg>
+                        {/* Menu Trigger */}
+                        <button
+                            role="button"
+                            className="nav-close-btn group flex items-center gap-3 focus:outline-none"
+                            onClick={toggleMenu}
+                            style={{ pointerEvents: 'auto' }}
+                        >
+                            <span className="text-sm font-bold uppercase tracking-widest text-gray-900 group-hover:text-primary transition-colors">Menu</span>
+                            <div className="relative w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 group-hover:bg-primary/90 transition-all duration-300">
+                                <div className="icon-wrap w-5 h-5">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="100%"
+                                        viewBox="0 0 16 16"
+                                        fill="none"
+                                        className="menu-button-icon transition-transform duration-500"
+                                    >
+                                        <path
+                                            d="M7.33333 16L7.33333 -3.2055e-07L8.66667 -3.78832e-07L8.66667 16L7.33333 16Z"
+                                            fill="currentColor"
+                                        ></path>
+                                        <path
+                                            d="M16 8.66667L-2.62269e-07 8.66667L-3.78832e-07 7.33333L16 7.33333L16 8.66667Z"
+                                            fill="currentColor"
+                                        ></path>
+                                    </svg>
+                                </div>
                             </div>
-                        </button> */}
+                        </button>
                     </div>
                 </header>
             </div>
