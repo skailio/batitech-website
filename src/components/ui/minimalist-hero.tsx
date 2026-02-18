@@ -62,24 +62,15 @@ export const MinimalistHero = ({
                     </div>
                 </motion.div>
 
-                {/* Center Image with Building Theme Shape */}
+                {/* Center Image (No Background Shape) */}
                 <div className="relative order-1 md:order-2 flex justify-center items-center h-[500px]">
-                    {/* Building/House Theme Shape: Square with rounded corners (Squaricle) instead of Circle */}
-                    <motion.div
-                        initial={{ scale: 0.8, opacity: 0, rotate: -10 }}
-                        animate={{ scale: 1, opacity: 1, rotate: 0 }}
-                        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
-                        className="absolute z-0 h-[300px] w-[300px] rounded-[2rem] bg-primary/20 md:h-[400px] md:w-[400px] lg:h-[500px] lg:w-[500px]"
-                        style={{ borderRadius: '2rem 2rem 0 0' }} // House/Arch shape hint
-                    ></motion.div>
-
                     <motion.img
                         src={imageSrc}
                         alt={imageAlt}
-                        className="relative z-10 h-auto w-56 object-contain md:w-64 lg:w-80 drop-shadow-2xl"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.4 }}
+                        className="relative z-10 h-auto w-64 object-contain md:w-80 lg:w-[450px] drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-700 ease-out"
+                        initial={{ opacity: 0, scale: 0.8, y: 50 }}
+                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
                     />
                 </div>
 
