@@ -29,8 +29,8 @@ export default function Home() {
         locationText="Zone d'intervention : 90km autour de Brasles"
       />
 
-      <section className="py-20 bg-gray-50/50 border-t border-dashed border-gray-200">
-        <div className="container mx-auto px-6 mb-12 text-center">
+      <section className="py-12 bg-gray-50/50 border-t border-dashed border-gray-200">
+        <div className="container mx-auto px-6 mb-8 text-center">
           <h2 className="text-sm font-bold text-gray-900 uppercase tracking-widest mb-2">Nos Certifications & Partenaires</h2>
           <div className="w-12 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
@@ -39,7 +39,7 @@ export default function Home() {
 
       <AboutSection />
 
-      <section className="py-24 bg-white relative overflow-hidden" id="realisations">
+      <section className="py-16 bg-white relative overflow-hidden" id="realisations">
         {/* Background decoration */}
         <div className="absolute top-0 right-0 w-1/3 h-full bg-gray-50 -skew-x-12 translate-x-32 z-0"></div>
 

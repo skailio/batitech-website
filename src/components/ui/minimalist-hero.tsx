@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Tilt } from './tilt';
 import { cn } from '@/lib/utils';
 
 // Define the props interface for type safety and reusability
